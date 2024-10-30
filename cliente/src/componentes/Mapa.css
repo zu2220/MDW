@@ -1,0 +1,21 @@
+.map-container {
+    text-align: center;
+    padding: 20px;
+    
+  }
+  
+  .map-wrapper {
+    margin: 0 auto; 
+    height: 400px;
+    width: 80%; 
+  }
+  
+  .typography-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .typography-subtitle {
+    margin-bottom: 20px;
+    color: #555;
+  }

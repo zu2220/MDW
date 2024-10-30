@@ -1,0 +1,10 @@
+.chart-container {
+    width: 800px; /* Ancho máximo */
+    margin-left: -400px;
+    padding: 20px; /* Espacio alrededor del gráfico */
+    border-color: black;
+  }
+  
+  .bar-chart {
+    height: 400px; /* Ajusta la altura del gráfico */
+  }
