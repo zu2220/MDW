@@ -1,7 +1,34 @@
 // FormularioRegistro.jsx
 import React, { useState } from 'react';
 import { TextField, Button, Box, Grid } from '@mui/material';
+//import {register} from '../../../server/src/controllers/auth.controllers'
+function registerForm(){
+  const [form, setForm] = useState({email: '', password: ''});
 
+  const handleChange = (e) =>{
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    });
+  };
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+    try{
+      const response = await fetch('http://localhost:3000/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(form),
+          });
+          const data = await response.json();
+          console.log('User registered:',data);
+    }catch(error){
+      console.error('Error registering user:', error);
+    }
+  };
+  
+}
 const FormularioRegistroAdministradores = ({ agregarRegistro }) => {
   const [nombre, setNombre] = useState('');
   const [apellidos, setApellidos] = useState('');
@@ -16,11 +43,20 @@ const FormularioRegistroAdministradores = ({ agregarRegistro }) => {
       setApellidos('');
       setCorreo('');
       setCelular('');
+      //register({nombre,celular});
     }
   };
+  const addUser = (e) =>{
+    this.setState({
+      email: e.target.value,
+      password: e.target.value
+    })
+
+  }
+
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: '600px', margin: '0 auto' }}>
+    <Box component="form" onSubmit={addUser} sx={{ maxWidth: '600px', margin: '0 auto' }}>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           <TextField

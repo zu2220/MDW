@@ -143,7 +143,7 @@ const App = () => {
               path="/administradores"
               element={
                 <Box sx={{ display: 'grid', gap: 2 }}>
-                  <FormularioRegistroAdministradores agregarRegistro={agregarRegistro} handleAddUser={handleAddUser} />
+                 <FormularioRegistroAdministradores agregarRegistro={agregarRegistro} handleAddUser={handleAddUser} />
                   <TablaAdministradores registros={registros} />
                 </Box>
               }

@@ -7,9 +7,9 @@ export function createAccessToken(payload){
             payload,
             SECRET,
             {
-                expiresIn: "Id"
-            },
-            (err,token)=>{
+                expiresIn: "1d" //aquí es 1, es decir el numero uno.
+            },                  //Yo había puesto la letra i en Maypuscula
+            (err,token)=>{      //Por eso no funcionaba
                 if(err) reject (err)
                 resolve(token)
             }
