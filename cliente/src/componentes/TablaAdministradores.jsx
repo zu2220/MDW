@@ -8,20 +8,16 @@ const TablaAdministradores = ({ registros }) => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell><Typography variant="h6">Nombre</Typography></TableCell>
-            <TableCell><Typography variant="h6">Apellidos</Typography></TableCell>
-            <TableCell><Typography variant="h6">Correo Electrónico</Typography></TableCell>
-            <TableCell><Typography variant="h6">Celular</Typography></TableCell>
+            <TableCell><Typography variant="h6">Email</Typography></TableCell>
+            <TableCell><Typography variant="h6">Password</Typography></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {registros.length > 0 ? (
             registros.map((registro, index) => (
               <TableRow key={index}>
-                <TableCell>{registro.nombre}</TableCell>
-                <TableCell>{registro.apellidos}</TableCell>
-                <TableCell>{registro.correo}</TableCell>
-                <TableCell>{registro.celular}</TableCell>
+                <TableCell>{registro.email}</TableCell>
+                <TableCell>{registro.password}</TableCell>
               </TableRow>
             ))
           ) : (
