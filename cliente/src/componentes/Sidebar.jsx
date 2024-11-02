@@ -12,7 +12,7 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 
 const drawerWidth = 200;
 
-const Sidebar = () => {
+const Sidebar = ({ isAuthenticated }) => {
   const navigate = useNavigate();
 
   return (
@@ -29,7 +29,7 @@ const Sidebar = () => {
       </Typography>
       <Divider />
       <List>
-        {[
+        { isAuthenticated && [
           
           { text: 'Dashboard', icon: <Dashboard />, path: '/dashboard' },
           { text: 'Users', icon: <People />, path: '/users' },

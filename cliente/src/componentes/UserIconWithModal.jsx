@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IconButton, Modal, Box, Typography } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import FormularioLogin from './FormularioLogin';
 
 const style = {
   position: 'absolute',
@@ -16,9 +17,9 @@ const style = {
 
 const UserIconWithModal = () => {
   const [open, setOpen] = useState(false);
-
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
 
   return (
     <div>
@@ -35,9 +36,8 @@ const UserIconWithModal = () => {
           <Typography id="modal-title" variant="h6" component="h2">
             Información de Usuario
           </Typography>
-          <Typography id="modal-description" sx={{ mt: 2 }}>
-            Este es el contenido del modal sobre el usuario.
-          </Typography>
+          {/* Pasamos la función mostrarMensaje como prop */}
+          <FormularioLogin />
           <IconButton onClick={handleClose} color="secondary" sx={{ mt: 2 }}>
             Cerrar
           </IconButton>
